@@ -1,0 +1,77 @@
+###############################################################################################
+##########				Yocto Project Scripts 			###############
+#########	Arun M Kumar				arunkr.linux@gmail.com  ###############
+###############################################################################################
+
+Last Edit: 15 Sep 2013				latest update: First Commit, basics covered
+------------------------------------------------------------------------------------------------
+
+
+The Purpose of this Document is to provide the generic usage guidelines of the scripts available
+in this repo.
+
+First of all decide upon a directory structure and STICK to that.
+many of the fields in the scripts heavy depend upon them once the build is started.
+
+The Directory structure followed by me was like this, feel free to have your own.
+
+/home/arunkumar/Development/Embedded_Linux/Yocto
+
+simple as that :)
+
+now, the default script that comes along with the package has certain features masked
+that can cost us real amount of time, they have been mentioned in the quick start guide
+but still for the uninitiated i shall post the changes that i made.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Step 1: Get a powerful host machine
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	Q. What kind of power are we talking about?
+	A: Processing power obviously, not popey's power.	
+		a'core i' series processor along with agenerous dose of RAM would be good.
+		if possible use a 64bit system with more than 8GB RAM to speed up builds.
+	
+	Q. why is that much power required?
+	A: obvious question. The thing is that your machine is no longer building code for itself, it 
+		is building code for some other machine architecture and as a reqult there is much more 
+		work involved, more compilations to perform, fetching, unpacking, compiling, packing and
+		installing, and there are thousands of such tasks that we are talkn about.
+		around 5000 shall be a good guess.
+
+	Q. I still quite dont get it.
+	A: On an Core i7 processor with 16GB RAM and a healthy badwidth of 5-10MBps , the build took 2 hours
+		now you know your machine and internet connections much better than me.
+		you decide.
+		my build took 26 Hours.... i could not put that in simple terms
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Step 2:
+	Get a Download directory and an sstate-cache directory fixed.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	
+	Q. why?
+	A: The Yocto Project build downloads the required repositiories and packages most of the time
+	 	and these can be reused in the later builds. The first build is always the longest,
+		you can save a GREAT amount of time by reusing thesepackages, otherwise you are wasting
+		bandwidth and hard disk space.
+	
+	Q. How much of a download are we talking about?
+	A: In GBs (Giga Bytes), so you get my point now... good
+		you shall have a serious reason or mental disability to be downloading that amount of data
+		that is going to be reundant.
+
+	Q. but i am short on hard disk space.
+	A: well sorry then, you need atleast 50 -75GB of free hard disk space to comfortably build images.
+
+	Q. but there must be a way.. please tell me, i have a really tiny hard disk/ a large music collection
+	A: I sympathize with you.
+		set the downloads directory on a NFS. Dont use 'FTP/ or 'http' they are too slow and frustrate you.
+
+
+	
+	 
