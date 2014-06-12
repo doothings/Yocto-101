@@ -16,13 +16,22 @@ and
 
 http://www.internetofthings-pune.blogspot.in/
 
+This project is still in native tage, so appologies for the unorganized content.
 
 
 Structure
 =========
   
-  Thre steucture of the tutorials is as follows and would be updated as we progress.
+  The steucture of the tutorials is as follows and would be updated as we progress.
   
   1. Getting Started, First build
   2. using a third party BSP.
   3. Tinkering with the scripts.
+
+Directory Structure
+===================
+
+Yocto-101
+	---- blog (blog entries by post number.
+	---- scripts (scripts that have been used)
+	---- docs (useful docs sourced from the web)
